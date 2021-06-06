@@ -67,14 +67,13 @@ for (let x = 1; x <= 10; x ++){
     cities com todas as letras maiúsculas, utilizando o for loop.
   - Para ver se deu certo, exiba o upperCaseCities no console.
 */
-
 /*
 const cities = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais']
 let upperCaseCities = []
 for (let i = 0; i < cities.length; i ++){
-  upperCaseCities = cities[i]
-  console.log(upperCaseCities.toUpperCase())
+  upperCaseCities.push(cities[i].toUpperCase())
 }
+console.log(upperCaseCities)
 */
 
 /*
@@ -88,9 +87,11 @@ for (let i = 0; i < cities.length; i ++){
 
 /*
 const names = ['João Grilo', 'Chicó', 'Rosinha']
+let HTMLTemplate = ''
 for(let i = 0; i < names.length; i ++) {
-  console.log(`<li>${names[i]}</li>`)
+  HTMLTemplate += `<li>${names[i]}</li>`
 } 
+console.log(HTMLTemplate)
 */
 
 /*
@@ -106,9 +107,9 @@ for(let i = 0; i < names.length; i ++) {
 const numbers = ['91', '5', '30', '97', '83', '31']
 let soma = 0
 for(let i = 0; i < numbers.length; i ++) {
-  soma = Number(soma) + Number(numbers[i])
+  soma += Number(numbers[i])
 }
-console.log(soma == 337)
+console.log(soma === 337)
 */
 
 /*
@@ -136,6 +137,7 @@ const arrays = [
   [2, 8, 4] 
 ]
 
+// Como eu fiz
 /*
 let i = 0
 let ii = 0
@@ -149,8 +151,7 @@ while (i < arrays.length) {
   ii = 0
 }
 console.log(soma)
-*/
-
+*//*
 let soma = 0
 for (let i = 0; i < arrays.length; i ++) {
   for (let ii = 0; ii < arrays[i].length; ii ++){
@@ -159,3 +160,14 @@ for (let i = 0; i < arrays.length; i ++) {
   ii = 0
 }
 console.log(soma)
+*/
+
+// Como o professor fez
+let arraysSum =0
+for(let i = 0; i < arrays.length; i++) {
+  for (let j = 0; j < arrays[i].length; j ++) {
+    arraysSum += arrays[i][j]
+  }
+}
+console.log(arraysSum)
+
