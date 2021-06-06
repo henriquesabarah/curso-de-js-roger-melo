@@ -21,7 +21,13 @@
     5
 */
 
-
+/*
+let i = 0
+while (i <=5){
+  console.log(i)
+  i ++
+}
+*/
 
 /*
   02 - Comente a declaração da let e o loop acima e:
@@ -29,7 +35,11 @@
   - Utilizando um for loop, faça o mesmo que foi pedido no exercício 01.
 */
 
-
+/*
+for(let i = 0; i <= 5; i ++) {
+  console.log(i)
+}
+*/
 
 /*
   03 - Comente o loop acima e:
@@ -42,7 +52,11 @@
   "Esta é a Xª vez que esta frase é exibida no console."
 */
 
-
+/*
+for (let x = 1; x <= 10; x ++){
+  console.log(`Esta é a ${x}ª ves que esta frase é exibida no console.`)
+}
+*/
 
 /*
   04 - Comente o loop acima e:
@@ -54,7 +68,14 @@
   - Para ver se deu certo, exiba o upperCaseCities no console.
 */
 
+/*
 const cities = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais']
+let upperCaseCities = []
+for (let i = 0; i < cities.length; i ++){
+  upperCaseCities = cities[i]
+  console.log(upperCaseCities.toUpperCase())
+}
+*/
 
 /*
   05 - Comente o console.log acima e:
@@ -65,7 +86,12 @@ const cities = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais']
     <li>João Grilo</li><li>Chicó</li><li>Rosinha</li>
 */
 
+/*
 const names = ['João Grilo', 'Chicó', 'Rosinha']
+for(let i = 0; i < names.length; i ++) {
+  console.log(`<li>${names[i]}</li>`)
+} 
+*/
 
 /*
   06 - Comente o console.log acima e:
@@ -76,7 +102,14 @@ const names = ['João Grilo', 'Chicó', 'Rosinha']
   - O console deve exibir true.
 */
 
+/*
 const numbers = ['91', '5', '30', '97', '83', '31']
+let soma = 0
+for(let i = 0; i < numbers.length; i ++) {
+  soma = Number(soma) + Number(numbers[i])
+}
+console.log(soma == 337)
+*/
 
 /*
   07 - Comente o console.log acima.
@@ -100,5 +133,29 @@ const arrays = [
   [4, 32, 8],
   [64, 8, 32],
   [8, 32, 16],
-  [2, 8, 4]
+  [2, 8, 4] 
 ]
+
+/*
+let i = 0
+let ii = 0
+let soma = 0
+while (i < arrays.length) {
+  while (ii < arrays[i].length) {
+    soma = soma + arrays[i][ii]
+    ii ++
+  }
+  i ++
+  ii = 0
+}
+console.log(soma)
+*/
+
+let soma = 0
+for (let i = 0; i < arrays.length; i ++) {
+  for (let ii = 0; ii < arrays[i].length; ii ++){
+    soma += arrays[i][ii]
+  }
+  ii = 0
+}
+console.log(soma)
