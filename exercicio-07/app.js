@@ -5,7 +5,7 @@
   - O resultado exibido no console deve ser: false true.
 */
 
-console.log(true, false)
+console.log(!true, !false)
 
 /*
   02
@@ -18,6 +18,14 @@ console.log(true, false)
 
 const animals = ['macaco', 'tucano', 'elefante', 'pavão', 'hipopótamo']
 
+  const lion = animals.includes('leão')
+
+  if (!lion) {
+    console.log('Leão não existe no array animails')
+  } else {
+    console.log('Existe um leão no array animals')
+  }
+    
 /*
   03
 
@@ -30,6 +38,17 @@ const animals = ['macaco', 'tucano', 'elefante', 'pavão', 'hipopótamo']
 */
 
 const randomNumbers = [59, 61, 73, 57, 35, 73, 21, 87, 43]
+let more400 = 400
+let score = 0
+
+for (let i = 0; i < randomNumbers.length; i ++) {
+  score += randomNumbers[i]
+  
+  if (score > more400) {
+    console.log(`A soma ultrapassou 400. Até aqui, o valor é ${score}`)
+    break
+  }
+}
 
 /*
   04
@@ -41,6 +60,18 @@ const randomNumbers = [59, 61, 73, 57, 35, 73, 21, 87, 43]
 */
 
 const sentence = ['A', 'certeza', 'dúvida', 'é', 'o', 'princípio', 'da', 'sabedoria.']
+
+let noCerteza = 'certeza'
+let frase = ''
+
+for (let i = 0; i < sentence.length; i ++) {
+  
+    if (sentence[i] != noCerteza) {
+      frase += sentence[i]
+    }
+    
+}
+console.log(frase)
 
 /*
   05
@@ -58,6 +89,28 @@ const sentence = ['A', 'certeza', 'dúvida', 'é', 'o', 'princípio', 'da', 'sab
 */
 
 const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS', 97, true, 'Git', 11, 'sticker', false, 'GitHub', true, null]
+const arrayString = []
+let xNumbers = 0
+let xBooleans = 0
+let xStrings = 0
+
+for (let i = 0; i < randomValues.length; i ++) {
+  xNumbers ++
+  if (typeof randomValues[i] === 'string') {
+    xStrings ++
+    arrayString.push(randomValues[i])
+    if (xStrings >= 4) {
+      break
+    }
+  } else if (typeof randomValues[i] === 'boolean') {
+    xBooleans ++
+
+  } 
+
+}
+console.log(`As Primeiras 4 strings são ${arrayString.join(', ').replace(', G', ' e G')}`)
+console.log(`Até que as primeiras 4 strings fossem iteradas, ${xBooleans} booleans foram iterados`)
+console.log(`O array foi iterado por ${xNumbers} vezes`)
 
 /*
   06
