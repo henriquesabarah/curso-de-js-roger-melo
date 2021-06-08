@@ -47,12 +47,14 @@ if (fruits.includes('abacaxi')) {
 */
 
 const hours = 5 
+const isMorning = hours > 6 && hours < 12
+const isAfternoon = hours >= 12 && hours< 18
 
-if ( hours > 6 && hours < 12) {
+if (isMorning) {
   console.log('Bom dia !')
-} else if ( hours >= 12 && hours< 18) {
+} else if (isAfternoon) {
   console.log('Boa Tarde !')
-} else if (hours >= 18 && hours < 24 || hours <= 6 && hours >= 0) {
+} else {
   console.log('Boa Noite !')
 }
 
@@ -70,14 +72,16 @@ if ( hours > 6 && hours < 12) {
     também está funcionando.
 */
 const age = 41
-let ticket = ''
-if (age <= 7 || age >= 65) {
+let ticket = null
+const isKid = age <= 7
+const isOld = age >= 65
+
+if (isKid || isOld) {
   ticket = 'Pra você, a entrada é gratis!'
-  console.log(ticket)
 } else {
   ticket = 'A entrada é R$30,00'
-  console.log(ticket)
 }
+console.log(ticket)
 
 /*
   04
@@ -92,10 +96,11 @@ const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
 let newNumbers = []
 
 for (let i = 0; i < numbers.length; i ++) {
-  if (numbers[i] >= 11 && numbers[i] <= 90) { 
-    newNumbers.push(numbers[i]) 
+  const number = numbers[i]
+
+  if (number >= 11 && number <= 90) { 
+    newNumbers.push(number) 
   }
- 
 }
 console.log(newNumbers)
 
@@ -118,11 +123,15 @@ let xNúmeros = 0
 let xStrings = 0
 
 for (let i = 0; i < crazyArray.length; i ++) {
-  if (typeof crazyArray[i] === "boolean") {
+  const typeofItem =  typeof crazyArray[i]
+  const isItemABoolean = typeofItem === "boolean"
+  const isItemANumber = typeofItem === "number"
+
+  if (isItemABoolean) {
     xBooleans ++
-  } else if (typeof crazyArray[i] === "number" ) {
+  } else if (isItemANumber) {
     xNúmeros ++
-  } else if (typeof crazyArray[i] === "string") {
+  } else {
     xStrings ++
   }
 }
@@ -149,14 +158,18 @@ const randomNumbers = [73, 4, 67, 10, 31, 58]
 let parNumbers = []
 let imparNumbers = []
 
+
 for (let i = 0; i < randomNumbers.length; i ++) {
-  if ((randomNumbers[i] % 2) == 0) {
-    parNumbers.push(randomNumbers[i])
+  const itemNumber = randomNumbers[i]
+  const isEvenNumber = (itemNumber % 2) === 0
+
+  if (isEvenNumber) {
+    parNumbers.push(itemNumber)
   } else
-    imparNumbers.push(randomNumbers[i])
+    imparNumbers.push(itemNumber)
 }
  
-let lastParNumber = parNumbers.pop()
-let lastImparNumber = imparNumbers.pop()
-console.log(`Números pares: ${parNumbers.join(', ')} e ${lastParNumber}`)
-console.log(`Números ímpares: ${imparNumbers.join(', ')} e ${lastImparNumber}`)
+const evenNumberString = parNumbers.join(', ').replace(', 5', ' e 5')
+const oddNumberString = imparNumbers.join(', ').replace(', 3', ' e 3')
+
+console.log(`Numeros ímpares: ${oddNumberString}. Números pares: ${evenNumberString}`)
