@@ -6,6 +6,12 @@
   - Previna que esses parâmetros recebam undefined;
   - Exiba o resultado no console, sem inserir um console.log() dentro da função.
 */
+function multiplica(number1, number2) {
+  const result = number1 * number2
+  console.log(result)
+}
+
+multiplica(5, 2)
 
 /*
   02
@@ -14,6 +20,12 @@
     **function expression** que retorne o resultado da **divisão** entre esses  
     2 números.
 */
+const divid = function (number1, number2) {
+  const result = number1 / number2
+  console.log(result)
+}
+
+divid(5, 2)
 
 /*
   03
@@ -27,6 +39,13 @@
 
   "Esta é a Xª vez que essa string é exibida."
 */
+function sevenX() {
+  for (let i = 1; i <= 7; i ++) {
+    //console.log(`Esta é a ${i}ª vez que essa string é exibida`)
+  }
+}
+
+sevenX()
 
 /*
   04
@@ -40,6 +59,18 @@
 */
 
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
+
+const capitalMillennialWords = []
+
+function maiusculas() {
+  for (i = 0; i < millennialWords.length; i ++) {
+    capitalMillennialWords.push(millennialWords[i])
+  }
+  
+  console.log(capitalMillennialWords)
+}
+
+maiusculas()
 
 /*
   05
