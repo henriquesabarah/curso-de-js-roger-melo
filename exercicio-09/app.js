@@ -12,18 +12,25 @@
   - Converta a função abaixo em uma arrow function e utilize-a para exibir um  
     valor no console.
 */
-
+/*
 function convertToString (value) {
   return String(value)
 }
+console.log(convertToString(100))
+*/
+const convertToString = value=>  String(value)
 
+console.log(typeof convertToString(100))
 /*
   02
 
   - Crie uma função que retorne a quantidade de caracteres que uma string  
     recebida por parâmetro possui.
 */
+const numbersCaraters = string => string.length
+ 
 
+console.log(numbersCaraters('henrique'))
 /*
   03
 
@@ -33,13 +40,18 @@ function convertToString (value) {
 
   "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
 */
+const nameUpperCase = string => string.toLowerCase() 
 
+console.log(nameUpperCase('CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO'))
 /*
   04
 
   - Crie uma função que recebe 2 parâmetros: um caractere e uma string;
   - Ao ser invocada, a função deve retornar o index do caractere na string.
 */
+const getIndex = (character, string) => string.indexOf(character)
+
+console.log(getIndex('2', '123'))
 
 /*
   05
@@ -47,21 +59,31 @@ function convertToString (value) {
   - Crie uma função que, ao ser invocada, retorna um boolean indicando se o item  
     passado por argumento existe no array (também passado por argumento).
 */
+const getBoolean = (item, array) => array.includes(item)
 
+
+
+console.log(getBoolean(3, [7, 3, 1]))
 /*
   06
 
   - Crie uma função que retorna a concatenação de 2 arrays, passados como  
     argumentos em sua invocação;
 */
+const twoArrays = (arrayA, arrayB) => arrayA.concat(arrayB)
 
+console.log(twoArrays([1,2], [3,4]))
 /*
   07
 
   - Crie uma função que retorna o array passado como argumento em sua invocação,  
     mas com o último item removido.
 */
-
+const arrayPassado = (array) => {
+  array.pop()
+  return array
+}
+console.log(arrayPassado([1, 2, 3, 4, 5, 6]))
 /*
   08
 
