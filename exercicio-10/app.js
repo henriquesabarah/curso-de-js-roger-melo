@@ -9,7 +9,17 @@
     - sound, que é um método que retorna o miado do gato.
   - Exiba o objeto no console.
 */
-
+let cat = {
+  name: 'jade',
+  age: 5,
+  color: 'white',
+  bestFriends: ['bela', 'patrine'],
+  sound: function() {
+    console.log('miau')
+  }
+}
+console.log(cat)
+cat.sound()
 /*
   02
 
@@ -18,13 +28,14 @@
 
   Até aqui, o objeto "cat" possui as seguintes propriedades e valores: "name", que recebeu "X", "age", que recebeu "X", "color", que recebeu "X", "bestFriends", que recebeu um array com os itens "X" e "X", e "sound", que recebeu uma função que retorna "X".
 */
-
+console.log(`Até aqui, o objeto "cat" possui as sequintes propriedades e valores: ${cat.name}, que recebeu ${cat.age}, "age", que recebeu ${cat.color}, "color", que recebeu ${cat.bestFriends.length}, "bestFriends", que recebeu um array com os itens ${cat.bestFriends[0]} e ${cat.bestFriends[1]}, e "sound", que recebeu uma função que retorna ${cat.sound()}.`)
 /*
   03
 
   - Adicione 2 anos à idade do gato e exiba a idade atualizada no console.
 */
-
+cat.age += 2
+console.log(cat.age) 
 /*
   04
 
@@ -32,7 +43,11 @@
   - Exiba o array de amigos no console para verificar se o novo amigo(a) foi  
     adicionado.
 */
-
+const newBestfriend = function (bestFriends) {
+  cat.bestFriends.push()
+}
+newBestfriend('isis')
+console.log(cat.bestFriends)
 /*
   05
 
@@ -41,7 +56,10 @@
   - Exiba a nova cor do gato no console, também utilizando a sintaxe de  
     colchetes.
 */
-
+const newColor = function() {
+  cat.color += 'black'
+}
+console.log(newColor())
 /*
   06
 
