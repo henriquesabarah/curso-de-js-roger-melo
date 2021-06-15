@@ -90,7 +90,9 @@ console.log(arrayPassado([1, 2, 3, 4, 5, 6]))
   - Crie uma função que retorna se o valor passado como argumento em sua  
     invocação é null.
 */
+const valorNull = (value) => value === null
 
+console.log(valorNull(null))
 /*
   09
 
@@ -101,6 +103,15 @@ console.log(arrayPassado([1, 2, 3, 4, 5, 6]))
     argumento a função que exibe seu nome no console e veja se o nome realmente  
     foi exibido.
 */
+const funcCallback = callback => {
+  callback()
+}
+
+const myName = () => {
+  console.log('Henrique Sabará')
+}
+
+funcCallback(myName)
 
 /*
   10
@@ -112,7 +123,13 @@ console.log(arrayPassado([1, 2, 3, 4, 5, 6]))
   - Faça com que a invocação da função descrita no 1º item deste exercício (10)  
     resulte no triplo de 33.
 */
+const funcValue = (value, callback) => {
+  return callback(value)
+}
 
+const triploNumber = number => number * 3
+
+console.log(funcValue(33, triploNumber))
 /*
   11
 
@@ -124,6 +141,14 @@ console.log(arrayPassado([1, 2, 3, 4, 5, 6]))
 
 const numbers = [1, 2, 3]
 
+const showNumbersInfo = (item, index, array) => {
+  const itemPosition = index + 1
+  const items = array.join(', ')
+  console.log(`O ${itemPosition}º item do array [${items}] é ${item}`)
+}
+
+numbers.forEach(showNumbersInfo)
+
 /*
   12
 
@@ -134,11 +159,16 @@ const numbers = [1, 2, 3]
 
 const letters = ['v', 'e', 'p']
 let lettersCopy = []
-
+/*
 for (let i = 0; i < letters.length; i++) {
   lettersCopy.push(letters[i])
 }
+*/
+letters.forEach((letter) => {
+  lettersCopy.push(letter)
+})
 
+console.log(lettersCopy)
 /*
   13
 
@@ -168,6 +198,12 @@ const review = [
 
 let paragraphs = ''
 
+const creatParagrephs = paragraph => {
+  paragraphs += `<p>${paragraph}</p>`
+}
+
+review.forEach(creatParagrephs)
+
 section.innerHTML = paragraphs
 
 /*
@@ -190,3 +226,24 @@ section.innerHTML = paragraphs
     pelo restante da quantidade de pessoas que curtiram o post (além das duas  
     pessoas já mencionadas no início da mensagem).
 */
+
+const getLikesMessage = (names = []) => {
+  const firtName = names[0]
+  const secondName = names[1]
+  const thirdName = names[2]
+  const otherName = names.length - 2
+
+  switch (names.length) {
+    case 0:
+      return 'Ninguém curtiu isso'
+    case 1:
+      return `${firtName} curtiu isso`
+    case 2:
+      return `${firtName} e ${secondName} curtiram isso`
+    case 3:
+      return `${firtName}, ${secondName} e ${secondName} curtiram isso`
+    default:
+      return `${firtName}, ${secondName} e ${otherName} mais pessoas curtiram isso`
+  }
+}
+console.log(getLikesMessage(['rafael', 'bruno', 'carlos', 'lucas']))
