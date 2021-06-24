@@ -12,8 +12,13 @@ const getCatInfo = () => {
   const name = 'Marcos'
   let age = 3
   const color = 'Cinza'
+  return {name, age, color}
 }
-
+//const name = getCatInfo().name
+//const age = getCatInfo().age
+//const color = getCatInfo().color
+const {name, age, color} = getCatInfo()
+console.log(`${name} é um gato ${color} de ${age} anos`)
 /*
   02
 
@@ -24,12 +29,14 @@ const getCatInfo = () => {
 
 const external = () => {
   const movie = 'Parasite'
-
+  
   const internal = () => {
     const extraInternal = () => {
       console.log(movie.toUpperCase())
     }
+    extraInternal()
   }
+  internal()
 }
 
 external()
@@ -44,7 +51,7 @@ external()
 */
 
 let randomNumbers = [3, 2, 1]
-
+console.log(randomNumbers.reverse())
 /*
   04
 
@@ -58,7 +65,8 @@ let crazyArray = [
   function getMessage () { return 'hi' },
   [ 5, 96, 53  ]
 ]
-
+crazyArray.shift()
+console.log(crazyArray)
 /*
   05
 
@@ -76,6 +84,8 @@ const dogs = [
   { name: 'Xica', age: 6, gender: 'Female', breed: 'Chihuahua' }
 ]
 
+const zequinha = dogs.find(dog => dog.name === 'Zequinha')
+console.log(zequinha)
 /*
   06
 
@@ -107,7 +117,7 @@ const dogs = [
     </article>
   </section>
 */
-
+console.log(document.querySelector('.main-title'))
 /*
   07
 
@@ -115,3 +125,5 @@ const dogs = [
     página, através da classe deles;
   - Exiba esse NodeList no console.
 */
+const h2All = document.querySelectorAll('.secondary-title')
+console.log(h2All)
